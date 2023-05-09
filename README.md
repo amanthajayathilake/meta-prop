@@ -1,7 +1,9 @@
 ## To run and test this app
 
-First, run the development server:
-
+First, install npm and run the development server:
+```npm i || yarn install
+```
+then
 ```bash
 npm run dev
 # or
@@ -17,8 +19,7 @@ Tab View
 ![localhost_3000_(iPad Air)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/ea9edd7a-bbb4-4927-91dc-51cc5554cdf8)
 
 Mobile View
-
-
+![localhost_3000_(iPhone SE)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/e74ac7e5-fb10-4db8-8c63-1596bc1d345f)
 
 ## To open cypress and run test cases:
 ```npx cypress open```
