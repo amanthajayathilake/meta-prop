@@ -14,7 +14,10 @@ Desktop View
 ![image](https://github.com/amanthajayathilake/meta-prop/assets/79798311/53e53e1a-0f5d-452d-97c9-51f7a12818f6)
 
 Tab View
-![localhost_3000_(iPad Air)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/dec5d92e-e220-4d1f-8c52-63378d2d4ad5)
+![localhost_3000_(iPad Air)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/ea9edd7a-bbb4-4927-91dc-51cc5554cdf8)
+
+Mobile View
+
 
 
 ## To open cypress and run test cases:
