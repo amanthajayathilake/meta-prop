@@ -1,3 +1,4 @@
+✨ Site is LIVE - https://meta-prop-lgx7wuaay-amanthajayathilake.vercel.app/
 ## To run and test this app
 
 First, install npm and run the development server:
