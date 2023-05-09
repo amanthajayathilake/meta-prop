@@ -49,7 +49,7 @@ export default function MenuAppBar() {
           </Typography>
           {auth && (
             <React.Fragment>
-              <Link href="/" passHref>
+              <Link href="/" passHref legacyBehavior >
                 <a style={{ textDecoration: 'none' }}>
                   <Typography
                     variant="h6"
@@ -84,7 +84,7 @@ export default function MenuAppBar() {
                   color="inherit"
                   sx={{ p: 0 }}
                 >
-                  <Image src="/Avatar.png" alt="Appbar avatar" width={40} height={40} />
+                  <Image src={"/Avatar.png" ||"https://res.cloudinary.com/amantha/image/upload/v1683638675/Avatar_wwzo9h.png"} alt="Appbar avatar" width={40} height={40} />
                   {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 </IconButton>
                 <Menu
