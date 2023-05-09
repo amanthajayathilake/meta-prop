@@ -49,8 +49,8 @@ export default function MenuAppBar() {
           </Typography>
           {auth && (
             <React.Fragment>
-              <Link href="/" legacyBehavior>
-                <a href="/" style={{ textDecoration: 'none' }}>
+              <Link href="/" passHref>
+                <a style={{ textDecoration: 'none' }}>
                   <Typography
                     variant="h6"
                     component="div"
