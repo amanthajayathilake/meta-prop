@@ -1,9 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+✨ Site is LIVE - https://meta-prop-lgx7wuaay-amanthajayathilake.vercel.app/
+## To run and test this app
 
-## Getting Started
-
-First, run the development server:
-
+First, install npm and run the development server:
+```npm i || yarn install
+```
+then
 ```bash
 npm run dev
 # or
@@ -12,23 +13,51 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Desktop View
+![image](https://github.com/amanthajayathilake/meta-prop/assets/79798311/53e53e1a-0f5d-452d-97c9-51f7a12818f6)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Tab View
+![localhost_3000_(iPad Air)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/ea9edd7a-bbb4-4927-91dc-51cc5554cdf8)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Mobile View
+![localhost_3000_(iPhone SE)](https://github.com/amanthajayathilake/meta-prop/assets/79798311/e74ac7e5-fb10-4db8-8c63-1596bc1d345f)
 
-## Learn More
+## To open cypress and run test cases:
+```npx cypress open```
 
-To learn more about Next.js, take a look at the following resources:
+## Test Codes
+```describe('API Tests', () => {
+  describe('API Test 1', () => {
+    it('should return data from the API', () => {
+      cy.request({
+        method: 'GET',
+        url: 'https://iqaccbyrzi.execute-api.ap-southeast-1.amazonaws.com/default/getHouseInfo',
+      }).then((response) => {
+        expect(response.status).to.eq(200); // Assert the response status code
+        expect(response.body).to.have.length.above(0); // Assert that the response has data
+      });
+    });
+  });
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  describe('API Test 2', () => {
+    it('should handle error responses', () => {
+      cy.request({
+        method: 'GET',
+        url: 'https://iqaccbyrzi.execute-api.ap-southeast-1.amazonaws.com/default/getHouseInfo',
+        failOnStatusCode: false,
+      }).then((response) => {
+        // Assert that the response status is an error
+        expect(response?.status)?.to?.be?.oneOf([400, 404, 500]);
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+        // Assert the error message or any other relevant properties in the response
+        expect(response?.body?.error)?.to?.exist;
+      });
+    });
+  });
+});
+```
 
-## Deploy on Vercel
+![image](https://github.com/amanthajayathilake/meta-prop/assets/79798311/eec7c117-bc3a-4452-94d2-606f9155271c)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
