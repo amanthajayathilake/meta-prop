@@ -1,5 +1,5 @@
 import CardItem from '../components/Card';
-import { sampleData } from '../services/Utils';
+import { sampleData, strings } from '../services/Utils';
 import { getHouseInfo } from '../services/api-services/house-api';
 import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
@@ -17,27 +17,32 @@ export default function Houses() {
 
   useEffect(() => {
     getAllHouseInfo();
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000)
   }, []);
 
-  const getAllHouseInfo = async() => {
-    getHouseInfo().then((data) => {
-      if(data?.length > 0) {
+  const getAllHouseInfo = async () => {
+    try {
+      const data = await getHouseInfo();
+      if (data?.length > 0) {
         setReponseList(data);
       } else {
-        setReponseList(sampleData);
+        setReponseList([]);
       }
       console.log(data);
-    }).catch((e) => {
-      console.log(e)
-    })
+    } catch (e) {
+      console.log(e);
+    }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   };
+  
 
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '20px', marginTop: '20px', paddingLeft: isMobile ? '3%' : isTablet ? '4%' : '5%'}}>
       <Grid container spacing={3} columns={{ xs: 1, sm: 8, md: 12 }}>
+        {!isLoading && reponseList?.length === 0 && (
+          <h3>{strings.NO_DATA_FOUND}</h3>
+        )}
         {isLoading ? [0, 1, 2, 3, 4, 5].map(() => {
           return (
             <Grid item xs={2} sm={4} md={4} key={Math.random()}>
